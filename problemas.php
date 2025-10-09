@@ -1,0 +1,317 @@
+<?php
+
+// Categoría 1: Variables y tipos de datos
+// Problema 1.1 Perfil de usuario
+
+$nombre = "Javier";
+$apellidos = "Saravia";
+$apellidos .= "20"; 
+$altura = 1.75;
+$esEstudiante = true;
+
+
+echo "Nombre: " .$nombre. "<br>";
+echo "Apellidos: " .$apellidos. "<br>";
+echo "Altura: " .$altura. "<br>";
+echo "¿Es estudiante?: " .$esEstudiante. "<br>";
+
+echo "<hr>";
+
+//Problema 1.2 Información de producto
+
+$producto = "Teclado";
+$precio = "35.99";
+$stock = 25;
+$estaEnOferta = true;
+
+echo "Producto: " .$producto. "<br>";
+echo "Precio: " .$precio. "<br>";
+echo "Stock: " .$stock. "<br>";
+echo "¿Está en oferta?: " .$estaEnOferta. "<br>";
+
+echo "<hr>";
+
+//Problema 1.3 Constantes de la aplicación
+
+define("NOMBRE_APP", "Mi tienda online");
+define("VERSION_APP", 1.0);
+
+echo "Nombre de la aplicación: " . NOMBRE_APP . "<br>";
+echo "Versión de la aplicación: " . VERSION_APP . "<br>";
+
+echo "<hr>";
+
+
+//Cat 2. 
+//problemas 2.1 calculadora básica
+$num1 = 10;
+$num2 = 5;
+
+$suma = $num1 + $num2;
+$resta = $num1 - $num2;
+$multiplicacion = $num1 * $num2;
+$division = $num1 / $num2;
+
+echo "Suma: " .$suma. "<br>";
+echo "Resta: " .$resta. "<br>";
+echo "Multiplicación: " .$multiplicacion. "<br>";
+echo "División: " .$division. "<br>";
+
+echo "<hr>";
+
+//Problema 2.2 Actualziación de stock
+$stock= 100;
+$venta = 25;
+
+$stock = $stock - $venta;
+
+$nuevoPedido = 50;
+$stock = $stock + $nuevoPedido;
+
+
+echo "Stock: " .$stock. "<br>";
+
+echo "<hr>";
+
+//Problema 2.3 Concatenación de textos
+$nombre = "Oskar";
+$apellido = "Calvo";
+$curso = "Desarrollo web en entorno servidor";
+
+$fraseComp = "El profesor " .$nombre. " " .$apellido. " imparte el curso de " .$curso. ".";
+
+echo $fraseComp. "<br>";
+
+//Problema 2.4 Comparaciones simples
+$edad = 20;
+$edadMinima = 18;
+
+var_dump($edad >= $edadMinima);
+
+$contraseñaGuardada = "1234";
+$contraseñaUsuario = "123";
+
+var_dump($contraseñaGuardada === $contraseñaUsuario);
+
+
+echo "<hr>";
+
+//Problema 2.5 ¿Par o impar?
+$numero = 7;
+
+if ($numero % 2 == 0)
+{
+    echo "El número " .$numero. " es par";
+}
+else{
+    echo "El número " .$numero. " es impar";
+}
+
+echo "<hr>";
+
+//Cat 3
+//Problema 3.1 Control de acceso   
+$edad = 17;
+
+if($edad >= 18)
+{
+    echo "Puedes pasar";
+}
+else{
+    echo "No puedes pasar";
+}
+
+echo "<hr>";
+
+// 3.2 Calificación de un examen 
+$nota = 7.5;
+
+if($nota >= 9)
+{
+    echo "Sobresaliente";
+}
+elseif($nota >= 7 && $nota < 9)
+    {
+        echo "Notable";
+    } 
+elseif($nota >= 5 && $nota < 7)
+        {
+            echo "Aprobado";
+        }
+        else{
+            echo "Suspenso";
+        }
+
+echo "<hr>";
+
+//3.3 Menu del dia con switch
+
+        $diaSemana = "lunes";
+        switch($diaSemana)
+        {
+            case "lunes":
+                echo "Lentejas";
+                break;
+            case "miércoles":
+                echo "Paella";
+                break;
+            case "viernes":
+                echo "Pescado al horno";
+                break;
+            default:
+                echo "No hay menú especial";
+        }
+
+
+//3.4 Verificación de usuario avanzada
+$rolUsuario = "admin";
+$usuarioActivo = true;
+
+if($rolUsuario === "admin" &&$usuarioActivo === true)
+{
+    echo "Acceso concedido";
+}else{
+    echo "Acceso denegado"; 
+}
+
+echo "<hr>";
+
+//Cat 4
+//4.1 Tabla de multiplicar del 7
+
+for($i= 1; $i <=10; $i++)
+{
+    $resultado = 7 * $i;
+    echo "7 x " .$i. " = " .$resultado. "<br>";
+}
+
+echo "<hr>";
+
+//4.2 Cuenta atras para año nuevo
+
+$contador = 10;
+while($contador >= 0)
+{
+echo $contador. "<br>";
+$contador--;
+
+}
+echo "¡Feliz año nuevo!";
+
+//4.3 Recorrer nombres 
+
+echo "<hr>";
+
+$alumnos = ["Ana" , "Juan" , "Pedro", "Sofía"];
+
+foreach($alumnos as $saludo)
+{
+    echo "Hola, " .$saludo. "<br>";
+}
+
+
+echo "<hr>";
+
+//4.4 Listado de productos 
+
+$productos = [
+    ["nombre" => "Teclado", "precio" => 50],
+    ["nombre" => "Ratón", "precio" => 25],
+    ["nombre" => "Monitor", "precio" => 200]
+];
+
+foreach($productos as $producto)
+{
+  echo "Producto: " .$producto['nombre']. ", Precio: " .$producto['precio']. " euros<br>";
+}
+
+echo "<hr>";
+
+// Cat 5
+//5.1 ficha de usuario
+$usuario = [
+    ["nombre" => "Javier", "email" => "javisaravia05@gmail.com", "estudiante" => true],
+
+];
+
+foreach($usuario as $usuarios)
+{
+    echo "Nombre: " .$usuarios["nombre"]. ", Email: " .$usuarios["email"]. ", ¿Estudiante?: " .$usuarios["estudiante"] . "<br>"; 
+}
+
+echo "<hr>";
+
+//5.2 Filtrado de notas 
+$notas = [8.5, 4.2, 7.0, 9.8, 5.5, 3.9];
+
+foreach($notas as $nota)
+{
+    if ($nota >=5)
+    {
+        echo "Aprobado: " .$nota. "<br>";
+    }
+    else
+    {
+        echo "Suspenso: " .$nota. "<br>";
+    }
+}
+
+echo "<hr>";
+
+//5.3 Lista de compra avanzada
+$listaCompra = [
+
+    "Frutas" => ["Manzanas", "Plátanos", "Naranjas"],
+    "Lácteos" => ["Leche", "Queso"],
+    "Limpieza" => ["Detergente", "Lejía"]
+];
+
+$total = 0;
+
+foreach($listaCompra as $categoria => $productos)
+{
+    echo "<strong>" .$categoria. ":<br>";
+    foreach($productos as $producto)
+    {
+        echo "- " .$producto. "<br>";
+    }
+}
+
+echo "<hr>";
+
+//5.4 Calculando el total del carrito
+$productos = [
+    ["nombre" => "Teclado", "precio" => 50],
+    ["nombre" => "Ratón", "precio" => 25],
+    ["nombre" => "Monitor", "precio" => 200]
+];
+
+foreach($productos as $producto)
+{
+    echo "Producto: " .$producto["nombre"] . ", Precio: " .$producto["precio"]. " euros<br>";
+
+    $total += $producto['precio'];
+}
+
+echo "Total del carrito: " .$total. " euros";
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
