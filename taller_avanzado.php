@@ -90,6 +90,80 @@ echo "</br>";
 //nivel 2
 //problema 4
 
+//creamos la funcion 
+
+function encontrarMaximo ($array)
+{
+    if (empty($array))
+        return null;
+
+
+$maximo = $array[0];
+foreach ($array as $numero) 
+    {
+        if ($numero > $maximo) 
+        {
+            $maximo = $numero;
+        }
+    }
+
+    return $maximo;
+}
+
+
+//Creamos un array de números de ejemplo
+$listaDeNumeros = [12, 45, 7, 23, 56, 8, 99, 34];
+
+//Llamamos a la función con nuestro array
+$valorMasAlto = encontrarMaximo($listaDeNumeros);
+
+//Imprimimos el resultado
+echo "El array es: [" . implode(", ", $listaDeNumeros) . "]\n";
+echo "El número más alto es: " . $valorMasAlto;
+
+
+//problema 5
+//filtrar usuarios por criterio
+
+$usuarios = [
+    ['nombre' => 'Ana', 'edad' => 25, 'activo' => true],
+    ['nombre' => 'Juan', 'edad' => 17, 'activo' => true],
+    ['nombre' => 'Pedro', 'edad' => 35, 'activo' => false],
+    ['nombre' => 'Sofía', 'edad' => 22, 'activo' => true]
+];
+
+function filtrarUsuarios($usuarios): array
+{
+    
+    $usuariosFiltrados = [];
+
+    
+    foreach ($usuarios as $usuario) {
+        if ($usuario['edad'] >= 18 && $usuario['activo'] === true) {
+            $usuariosFiltrados[] = $usuario;
+        }
+    }
+
+    return $usuariosFiltrados;
+}
+
+$usuariosActivos = filtrarUsuariosActivosYMayores($usuarios);
+
+//Imprimimos el resultado 
+print_r($usuariosActivos);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
